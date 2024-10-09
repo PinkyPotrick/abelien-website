@@ -1,0 +1,245 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.page-section {
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    padding-top: 80px; /* Add top padding to avoid the navbar overlap */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 15px;
+    background: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect behind the navbar */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #6200ea; /* Neon purple */
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Dark overlay for the video */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* More opacity (darker) */
+    z-index: -1;
+}
+
+.content-center h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0px 0px 20px #6200ea; /* Neon effect */
+}
+
+.content-center .quote {
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 0px 0px 10px #6200ea;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire background */
+    z-index: -2;
+}
+
+/* About Me Section */
+#about {
+    padding: 50px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #6200ea;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Videos Section */
+#videos {
+    padding: 50px;
+    text-align: center;
+}
+
+#videos h2 {
+    font-size: 2.5rem;
+    color: #6200ea;
+}
+
+.videos {
+    margin-top: 20px;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-gallery iframe {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Photos Section */
+#photos {
+    padding: 50px;
+    text-align: center;
+}
+
+#photos h2 {
+    font-size: 2.5rem;
+    color: #6200ea;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #6200ea;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#contact ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#contact ul li a:hover {
+    color: #6200ea;
+}
+
+@media (max-width: 780px) {
+    nav ul {
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .content-center h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-center .quote {
+        font-size: 1.2rem;
+    }
+
+    /* Video and Photo Galleries - switch to 1 or 2 columns for small screens */
+    .video-gallery, .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Even smaller screens, switch to 1 column */
+    @media (max-width: 480px) {
+        .video-gallery, .photo-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .content-center h1 {
+            font-size: 2rem;
+        }
+
+        .content-center .quote {
+            font-size: 1rem;
+        }
+    }
+}
